@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <!-- set the character set -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- first step to a responsive site -->
+    <title>Gun Violence Effects Mental Health of Black New Yorkers</title>
+
+    <!-- FONT AWESOME -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|PT+Serif:100,400|VT323" rel="stylesheet">
+
+    <!-- Your styles should be called here -->
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      	<![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- YOUR CONTENT GOES HERE -->
+      <div id="resultbox">
+        <div class="total" id="firsttotal">
+          <span>According to NYPD data 20,659 people were shot between 2006 and 2018. Use the filter below to narrow the demographics of each
+            victim.</span>
+        </div>
+
+        <div class="percent_total">
+          <span> </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="interact">
+      <form class="drop">
+        <select class="choice" id="boro">
+          <option value="">Borough</option>
+        </select>
+        <select class="choice" id="vic_race">
+          <option value="">Race or Ethnicity</option>
+        </select>
+        <select class="choice" id="vic_age_group">
+          <option value="">Age</option>
+        </select>
+        <select class="choice" id="vic_sex">
+          <option value="">Gender</option>
+        </select>
+        <select class="choice" id="statistical_murder_flag">
+          <option value="">Did Victim Die?</option>
+        </select>
+        <select class="choice" id="occur_year">
+          <option value="">Year</option>
+        </select>
+        <div class="reset-btn">
+          <button type="reset" value="reset" id="rstbtn">Reset</button>
+        </div>
+      </form>
+
+      <!-- templating occurs here -->
+      <script type="text/html" id="person_template">
+        <!--You selected a shooting in <%= person.boro %>. This person was killed: <%= person.statistical_murder_flag %>. They were  <%= person.vic_age_group %> years old, their gender was <%= person.vic_sex %> and their race was <%= person.vic_race %>.-->
+        <%= person %>
+      </script>
+
+      <script type="text/html" id="select_template">
+        <option value="<%= shot %>"><%= shot %></option>
+      </script>
+
+      <script type="text/html" id="select_template">
+        <option value="<%= statistical_murder_flag %>"><%= statistical_murder_flag %></option>
+      </script>
+    </div>
+
+
+
+    <!-- the jQuery library. You need this to be able to use jQuery ($) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Your javascript should be called here -->
+
+    <!-- link to lodash cdn -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
+
+    <!-- the main js file -->
+    <script src="main.js"></script>
+
+    <!-- link to data -->
+    <script src="data.js"></script>
+
+    </div>
+  </body>
+
+</html>
