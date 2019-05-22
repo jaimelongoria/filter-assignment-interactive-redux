@@ -157,11 +157,6 @@ span {
     transition-duration: 0.4s;
 }
 
-#rstbtn:hover {
-    background-color: #ff5252;
-    color: #FFFFFF;
-}
-
 p.solid {
     border-style: solid;
     border-width: thin;
@@ -224,6 +219,11 @@ hr {
 
     hr {
         width: 25%;
+    }
+
+    #rstbtn:hover {
+        background-color: #ff5252;
+        color: #FFFFFF;
     }
 }
 
